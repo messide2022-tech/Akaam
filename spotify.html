@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eu & Ela 💚</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --spotify-green: #1db954;
+  --bg-dark: #121212;
+  --card-dark: #181818;
+  --text-light: #ffffff;
+  --text-muted: #b3b3b3;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+header {
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #1db95455, transparent);
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card-dark);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: var(--spotify-green);
+}
+
+/* CONTADOR */
+.counter {
+  font-size: 1.8em;
+  margin-top: 10px;
+}
+
+/* TEXTO ANIMADO */
+.typing {
+  font-size: 1.2em;
+  min-height: 50px;
+}
+
+/* FOTOS */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.photos img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* MÚSICAS */
+.music {
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💚 LEO & MARIA 💚</h1>
+  <p>Juntos desde <strong>18 de fevereiro de 2025</strong></p>
+</header>
+
+<div class="container">
+
+  <!-- CONTADOR -->
+  <div class="card">
+    <h2>⏳ Nosso Tempo Juntos</h2>
+    <div class="counter" id="counter"></div>
+  </div>
+
+  <!-- TEXTO ROMÂNTICO -->
+  <div class="card">
+    <h2>💌 Nossa História</h2>
+    <div class="typing" id="typing"></div>
+  </div>
+
+  <!-- FOTOS -->
+  <div class="card">
+    <h2>📸 Nossos Momentos</h2>
+    <div class="photos">
+      <img src="foto1.jpg">
+      <img src="foto2.webp">
+      <img src="foto3.jpg">
+      <img src="foto4.jpg">
+    </div>
+  </div>
+
+  <!-- MÚSICAS -->
+  <div class="card">
+    <h2>🎵 Nossa Trilha Sonora</h2>
+
+    <div class="music">
+      <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/44pllb9f5QwcrD2kKc0gS0?si=MoyxqMMrTkSp3CldOBqHJw"
+      width="100%" height="152" frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <div class="music">
+      <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/44AyOl4qVkzS48vBsbNXaC?si=QuwfxLapRcePtc-hbkMGcw"
+      width="100%" height="152" frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  Feito com ❤️ por nós dois • Desde 18/02/2025 ♾️
+</footer>
+
+<script>
+// CONTADOR DE DIAS
+const startDate = new Date("2025-02-18");
+function updateCounter() {
+  const now = new Date();
+  const diff = now - startDate;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("counter").innerHTML =
+    `${days} dias juntos 💚`;
+}
+updateCounter();
+setInterval(updateCounter, 60000);
+
+// TEXTO DIGITANDO
+const text = "Desde o dia 18 de fevereiro de 2025, minha vida mudou. Cada sorriso seu, cada abraço, cada momento virou parte de mim. Essa página é só um pedacinho do quanto eu amo você. 💚";
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 40);
+  }
+}
+typeEffect();
+</script>
+
+</body>
+</html>
